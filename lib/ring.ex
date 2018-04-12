@@ -24,7 +24,7 @@ defmodule Ring do
   end
 
   def link_processes([proc | []], linked_processes) do
-    first_process = link_processes |> List.last
+    first_process = linked_processes |> List.last
     send(proc, {:link, first_process})
     :ok
   end
